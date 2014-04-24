@@ -5,6 +5,11 @@ public class Card
    
    private int suit, rank;
    
+   public Card()
+   {
+      suit = 0;
+      rank = Card.ACE;
+   }
    public Card(int s, int r)
    {
       suit = s;
@@ -33,6 +38,7 @@ public class Card
       }
         
    }
+   
    
    public String getRankString()
    {

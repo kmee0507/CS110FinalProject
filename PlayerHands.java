@@ -1,8 +1,10 @@
+import java.util.ArrayList;
+
 public class PlayerHands
 {
    final int HANDSIZE = 26;
-   private Card[] player1 = new Card[HANDSIZE];
-   private Card[] player2 = new Card[HANDSIZE];
+   private ArrayList<Card> player1 = new ArrayList<Card>();
+   private ArrayList<Card> player2 = new ArrayList<Card>();
    
    public PlayerHands()
    {
@@ -10,22 +12,22 @@ public class PlayerHands
       deck.shuffle();
       for(int i = 0; i<HANDSIZE;i++)
       {
-         player1[i] = deck.dealCard();
+         player1.add(deck.dealCard());
       }
       
       for(int i = 0; i<HANDSIZE;i++)
       {
-         player2[i] = deck.dealCard();
+         player2.add(deck.dealCard());
       }
 
    }
    
-   public Card[] getPlayer1Hand()
+   public ArrayList<Card> getPlayer1Hand()
    {
       return player1;
    }
    
-   public Card[] getPlayer2Hand()
+   public ArrayList<Card> getPlayer2Hand()
    {
       return player2;
    }
