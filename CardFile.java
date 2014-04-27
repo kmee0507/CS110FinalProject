@@ -201,7 +201,7 @@ public class CardFile
          }
          else if(c.getRank() == 11 && c.getSuit() == 1)
          {
-            ImageIcon im  = new ImageIcon("jack.jpg");
+            ImageIcon im  = new ImageIcon("jackc.jpg");
             images.add(im);
          }
          else if(c.getRank() == 11 && c.getSuit() == 2)
@@ -281,6 +281,11 @@ public class CardFile
       }
       
       
+     }
+     
+     public int getRank()
+     {
+      return c.getRank();
      }
      public void DisplayCards()
      {

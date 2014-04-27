@@ -15,7 +15,7 @@ public class WarGame extends JFrame
    
    public WarGame()
    {
-      final int WINDOW_WIDTH = 500;
+      final int WINDOW_WIDTH = 600;
       final int WINDOW_HEIGHT = 700;
       PlayerHands p = new PlayerHands();
       
@@ -80,6 +80,73 @@ public class WarGame extends JFrame
    {
       public void actionPerformed(ActionEvent e)
       {
+         ImageIcon p1 = player1.get(0);
+         ImageIcon p2 = player2.get(0);
+         
+         String string1 = p1.getDescription();
+         String string2 = p2.getDescription();
+         int sub1 = 0;
+         int sub2 = 0;
+         while (sub1 == 0)
+         {
+         if (string1.startsWith("2"))
+            sub1 = 2;
+         else if(string1.startsWith("3"))
+            sub1 = 3;
+         else if(string1.startsWith("4"))
+            sub1 = 4;
+         else if(string1.startsWith("5"))
+            sub1 = 5;
+         else if(string1.startsWith("6"))
+            sub1 = 6;
+         else if(string1.startsWith("7"))
+            sub1 = 7;
+         else if(string1.startsWith("8"))
+            sub1 = 8;
+         else if(string1.startsWith("9"))
+            sub1 = 9;
+         else if(string1.startsWith("10"))
+            sub1 = 10;
+         else if(string1.startsWith("jack"))
+            sub1 = 11;
+         else if(string1.startsWith("queen"))
+            sub1 = 12;
+         else if(string1.startsWith("king"))
+            sub1 = 13;
+         else if(string1.startsWith("ace"))
+            sub1 = 14;
+         }
+         
+         while (sub2 == 0)
+         {
+         if (string2.startsWith("2"))
+            sub2 = 2;
+         else if(string2.startsWith("3"))
+            sub2 = 3;
+         else if(string2.startsWith("4"))
+            sub2 = 4;
+         else if(string2.startsWith("5"))
+            sub2 = 5;
+         else if(string2.startsWith("6"))
+            sub2 = 6;
+         else if(string2.startsWith("7"))
+            sub2 = 7;
+         else if(string2.startsWith("8"))
+            sub2 = 8;
+         else if(string2.startsWith("9"))
+            sub2 = 9;
+         else if(string2.startsWith("10"))
+            sub2 = 10;
+         else if(string2.startsWith("jack"))
+            sub2 = 11;
+         else if(string2.startsWith("queen"))
+            sub2 = 12;
+         else if(string2.startsWith("king"))
+            sub2 = 13;
+         else if(string2.startsWith("ace"))
+            sub2 = 14;
+         }
+          
          
          player1Card.setIcon(player1.remove(0));
          
@@ -88,6 +155,30 @@ public class WarGame extends JFrame
          player1CardCount.setText("Cards Remaining " + player1.size());
          
          player2CardCount.setText("Cards Remaining " + player2.size());
+         
+         
+         if(sub1 > sub2)
+         {
+            player1.add(p1);
+            player1.add(p2);
+            
+            player1CardCount.setText("Cards Remaining " + player1.size() + " \nWINNER!");
+            player2CardCount.setText("Cards Remaining " + player2.size());
+            
+            
+            
+         }
+         else if(sub2 > sub1)
+         {
+            player2.add(p1);
+            player2.add(p2);
+            
+            player1CardCount.setText("Cards Remaining " + player1.size());
+            player2CardCount.setText("Cards Remaining " + player2.size() + " \nWINNER!");
+            
+            
+            
+         }
 
       }
    }
