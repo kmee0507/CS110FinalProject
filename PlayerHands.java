@@ -8,8 +8,7 @@ public class PlayerHands
    
    public PlayerHands()
    {
-      //DeckOfCards deck = new DeckOfCards();
-      //deck.shuffle();
+      
       CardFile c = new CardFile();
       for(int i = 0; i<HANDSIZE;i++)
       {

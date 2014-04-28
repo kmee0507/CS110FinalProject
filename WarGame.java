@@ -10,12 +10,12 @@ public class WarGame extends JFrame
    private ArrayList<ImageIcon> player1 = new ArrayList<ImageIcon>();
    private ArrayList<ImageIcon> player2 = new ArrayList<ImageIcon>();
    private JLabel label1, label2, player1Card, player2Card, player1CardCount, player2CardCount, nullLabel1, nullLabel2, nullLabel3, nullLabel4;
-   private JPanel panel1, panel2, panel3, panel4;
+   private JPanel panel1, panel2;
    private JButton flipButton, quitButton; 
    
    public WarGame()
    {
-      final int WINDOW_WIDTH = 800;
+      final int WINDOW_WIDTH = 1000;
       final int WINDOW_HEIGHT = 700;
       PlayerHands p = new PlayerHands();
       
@@ -42,7 +42,7 @@ public class WarGame extends JFrame
       
       
       flipButton = new JButton("Flip");
-      player1CardCount = new JLabel("Cards Remaining " + player1.size());
+      player1CardCount = new JLabel("Player 1 Cards Remaining " + player1.size());
       flipButton.addActionListener(new FlipButtonListener());
       panel1 = new JPanel();
       panel1.add(label1);
@@ -53,7 +53,7 @@ public class WarGame extends JFrame
       quitButton = new JButton("quit");
       quitButton.addActionListener(new QuitButtonListener());
       panel2 = new JPanel();
-      player2CardCount = new JLabel("Cards Remaining "+ player2.size());
+      player2CardCount = new JLabel("Player 2 Cards Remaining "+ player2.size());
       panel2.add(label2);
       panel2.add(quitButton);
       panel2.add(player2CardCount);
@@ -170,9 +170,9 @@ public class WarGame extends JFrame
             
             player2Card.setIcon(player2.remove(0));
             
-            player1CardCount.setText("Cards Remaining " + player1.size());
+            player1CardCount.setText("Player 1 Cards Remaining " + player1.size());
             
-            player2CardCount.setText("Cards Remaining " + player2.size());
+            player2CardCount.setText("Player 2 Cards Remaining " + player2.size());
             
             
             if(sub1 > sub2)
@@ -180,8 +180,8 @@ public class WarGame extends JFrame
                player1.add(p1);
                player1.add(p2);
                
-               player1CardCount.setText("Cards Remaining " + player1.size() + " \nWINNER!");
-               player2CardCount.setText("Cards Remaining " + player2.size());
+               player1CardCount.setText("Player 1 Cards Remaining " + player1.size() + " \nWINNER!");
+               player2CardCount.setText("Player 2 Cards Remaining " + player2.size());
                
                
                
@@ -191,8 +191,8 @@ public class WarGame extends JFrame
                player2.add(p1);
                player2.add(p2);
                
-               player1CardCount.setText("Cards Remaining " + player1.size());
-               player2CardCount.setText("Cards Remaining " + player2.size() + " \nWINNER!");
+               player1CardCount.setText("Player 1 Cards Remaining " + player1.size());
+               player2CardCount.setText("Player 2 Cards Remaining " + player2.size() + " \nWINNER!");
         
             }
             
@@ -284,8 +284,8 @@ public class WarGame extends JFrame
                player1.add(back3);
                player1.add(back4);
                
-               player1CardCount.setText("Cards Remaining " + player1.size() + " \nWINNER!");
-               player2CardCount.setText("Cards Remaining " + player2.size());
+               player1CardCount.setText("Player 1 Cards Remaining " + player1.size() + " \nWINNER!");
+               player2CardCount.setText("player 2 Cards Remaining " + player2.size());
                
                
                
@@ -299,8 +299,8 @@ public class WarGame extends JFrame
                player2.add(back3);
                player2.add(back4);
                
-               player1CardCount.setText("Cards Remaining " + player1.size());
-               player2CardCount.setText("Cards Remaining " + player2.size() + " \nWINNER!");
+               player1CardCount.setText("Player 1 Cards Remaining " + player1.size());
+               player2CardCount.setText("Player 2 Cards Remaining " + player2.size() + " \nWINNER!");
         
             }
                
@@ -323,10 +323,7 @@ public class WarGame extends JFrame
    }
 
    
-   public static void main(String[] args)
-   {
-      new WarGame();
-   }
+   
    
 }
       
