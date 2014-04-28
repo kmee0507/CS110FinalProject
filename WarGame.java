@@ -50,7 +50,7 @@ public class WarGame extends JFrame
       panel1.add(player1CardCount);
       
       
-      quitButton = new JButton("quit");
+      quitButton = new JButton("Quit");
       quitButton.addActionListener(new QuitButtonListener());
       panel2 = new JPanel();
       player2CardCount = new JLabel("Player 2 Cards Remaining "+ player2.size());
@@ -62,7 +62,20 @@ public class WarGame extends JFrame
       nullLabel2 = new JLabel();
       nullLabel3 = new JLabel();
       nullLabel4 = new JLabel();
-           
+      panel1.setBackground(Color.GREEN);
+      panel2.setBackground(Color.GREEN);
+      player1Card.setBackground(Color.CYAN); 
+      player1Card.setOpaque(true); 
+      player2Card.setBackground(Color.CYAN);
+      player2Card.setOpaque(true);
+      nullLabel1.setBackground(Color.CYAN);
+      nullLabel1.setOpaque(true);
+      nullLabel2.setBackground(Color.CYAN);
+      nullLabel2.setOpaque(true);
+      nullLabel3.setBackground(Color.CYAN);
+      nullLabel3.setOpaque(true);
+      nullLabel4.setBackground(Color.CYAN);
+      nullLabel4.setOpaque(true);
       
       add(panel1);
       add(player1Card);
@@ -302,6 +315,17 @@ public class WarGame extends JFrame
                player1CardCount.setText("Player 1 Cards Remaining " + player1.size());
                player2CardCount.setText("Player 2 Cards Remaining " + player2.size() + " \nWINNER!");
         
+            }
+            else if (ii == i)
+            {
+               player1.add(p1);
+               player2.add(p2);
+               player1.add(back1);
+               player2.add(back2);
+               player1.add(back3);
+               player2.add(back4);
+               player1CardCount.setText("Player 1 Cards Remaining " + player1.size());
+               player2CardCount.setText("Player 2 Cards Remaining " + player2.size());
             }
                
                
