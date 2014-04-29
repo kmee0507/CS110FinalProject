@@ -9,6 +9,7 @@ public class CardFile
    public CardFile()
    {
       DeckOfCards d = new DeckOfCards();
+      
       d.shuffle();
       
       for(int i = 0; i<HANDSIZE;i++)
@@ -283,10 +284,6 @@ public class CardFile
       
      }
      
-     public int getRank()
-     {
-      return c.getRank();
-     }
      public void DisplayCards()
      {
          for(ImageIcon names : images)
