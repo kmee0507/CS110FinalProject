@@ -3,6 +3,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+/**
+   The WarGame class creates a GUI for the war game and has a flip button
+   class and a quit button class
+*/
 public class WarGame extends JFrame 
 {
    final int HANDSIZE = 52;
@@ -13,15 +17,20 @@ public class WarGame extends JFrame
    private JButton flipButton, quitButton; 
    private ImageIcon p1, p2;
    
+   /**
+      The default constructor creates a WarGame GUI using a gridlayout
+      and has the user flip both cards to see who wins the war
+   */
    public WarGame()
    {
       final int WINDOW_WIDTH = 1000;
       final int WINDOW_HEIGHT = 700;
       PlayerHands p = new PlayerHands();
-      
+      //create player hands
       player1 = p.getPlayer1Hand();
       player2 = p.getPlayer2Hand();
       
+      //set gui information
       setTitle("WAR GAME");
       
       setSize(WINDOW_WIDTH, WINDOW_HEIGHT);  
@@ -31,16 +40,17 @@ public class WarGame extends JFrame
       JLabel label1 = new JLabel("Press to Flip Cards");
       JLabel label2 = new JLabel("Press to Quit & End Game");
       
+      //setLayout
       setLayout(new GridLayout(2,4));
       
       
-      
+      //start the images face down
       ImageIcon im = new ImageIcon("back.jpg");
       player1Card = new JLabel(im);
       player2Card = new JLabel(im);
       
       
-      
+      //add everything to there place in the GUI
       flipButton = new JButton("Flip");
       player1CardCount = new JLabel("Player 1 Cards Remaining: " + player1.size());
       flipButton.addActionListener(new FlipButtonListener());
@@ -58,6 +68,8 @@ public class WarGame extends JFrame
       panel2.add(quitButton);
       panel2.add(player2CardCount);
       
+      
+      //set background colors 
       nullLabel1 = new JLabel();
       nullLabel2 = new JLabel();
       nullLabel3 = new JLabel();
@@ -86,12 +98,15 @@ public class WarGame extends JFrame
       add(nullLabel3);
       add(nullLabel4);
       
+      //setVisible
       setVisible(true);
       
            
    }
    
-   
+   /**
+      The QuitButtonListener quits the game when clicked
+   */
    private class QuitButtonListener implements ActionListener
    {
       public void actionPerformed(ActionEvent e)
@@ -101,11 +116,16 @@ public class WarGame extends JFrame
       }
    }
    
+   /**
+      The FlipButtonListener class implements ActionListener
+      and has the user flip two cards and compare there values
+   */
    private class FlipButtonListener implements ActionListener
    {
       public void actionPerformed(ActionEvent e)
       {
          try{
+            //sets 4 null labels to empty
             nullLabel1.setIcon(null);
             nullLabel2.setIcon(null);
             nullLabel3.setIcon(null);
@@ -118,6 +138,7 @@ public class WarGame extends JFrame
             String string2 = p2.getDescription();
             int sub1 = 0;
             int sub2 = 0;
+            //assign sub1 a value
             while (sub1 == 0)
             {
             if (string1.startsWith("2"))
@@ -148,6 +169,7 @@ public class WarGame extends JFrame
                sub1 = 14;
             }
             
+            //assign sub2 a value
             while (sub2 == 0)
             {
             if (string2.startsWith("2"))
@@ -178,7 +200,7 @@ public class WarGame extends JFrame
                sub2 = 14;
             }
              
-            
+            //setIcons
             player1Card.setIcon(player1.remove(0));
             
             player2Card.setIcon(player2.remove(0));
@@ -187,7 +209,7 @@ public class WarGame extends JFrame
             
             player2CardCount.setText("Player 2 Cards Remaining: " + player2.size());
             
-            
+            //compare values
             if(sub1 > sub2)
             {
                player1.add(p1);
@@ -228,6 +250,10 @@ public class WarGame extends JFrame
       }
    }
    
+   /**
+      The War method compares two equal cards and has the player place
+      another card face down then flip another card and compare
+   */
    public void War()
    {
       ImageIcon back1 = player1.remove(0);
