@@ -14,14 +14,9 @@ public class PlayerHands
       {
          
          player1.add(c.dealImage());
-      }
-      
-      for(int i = 0; i<HANDSIZE;i++)
-      {
-         
          player2.add(c.dealImage());
       }
-
+      
    }
    public int sizeOfPlayer1Hand()
    {

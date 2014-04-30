@@ -22,14 +22,14 @@ public class WarGame extends JFrame
       player1 = p.getPlayer1Hand();
       player2 = p.getPlayer2Hand();
       
-      setTitle("WAR");
+      setTitle("WAR GAME");
       
       setSize(WINDOW_WIDTH, WINDOW_HEIGHT);  
       
       setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       
-      JLabel label1 = new JLabel("Press to flip Cards");
-      JLabel label2 = new JLabel("Press to quit & end game");
+      JLabel label1 = new JLabel("Press to Flip Cards");
+      JLabel label2 = new JLabel("Press to Quit & End Game");
       
       setLayout(new GridLayout(2,4));
       
@@ -345,7 +345,15 @@ public class WarGame extends JFrame
             }
             else if (ii == i)
             {
-               War();
+               player1.add(p1);
+               player2.add(p2);
+               player1.add(back1);
+               player2.add(back2);
+               player1.add(back3);
+               player2.add(back4); 
+               
+               player1CardCount.setText("Player 1 Cards Remaining: " + player1.size());
+               player2CardCount.setText("Player 2 Cards Remaining: " + player2.size()); 
 
             }
                
