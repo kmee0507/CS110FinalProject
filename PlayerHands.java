@@ -1,11 +1,18 @@
 import java.util.ArrayList;
 import javax.swing.*;
+/**
+   The PlayerHands class deals each player 26 cards that are of the
+   ImageIcon type.  It has methods to get how many cards each player has
+*/
 public class PlayerHands
 {
    final int HANDSIZE = 26;
    private ArrayList<ImageIcon> player1 = new ArrayList<ImageIcon>();
    private ArrayList<ImageIcon> player2 = new ArrayList<ImageIcon>();
    
+   /**
+      The default constructor deals each player 26 cards alternating each time
+   */
    public PlayerHands()
    {
       
@@ -18,43 +25,25 @@ public class PlayerHands
       }
       
    }
-   public int sizeOfPlayer1Hand()
-   {
-      return player1.size();
-   }
    
-   public int sizeOfPlayer2Hand()
-   {
-      return player2.size();
-   }
+   /**
+      The getPlayer1Hand method returns the players hand
+      @return an ArrayList with type ImageIcon
+   */
    public ArrayList<ImageIcon> getPlayer1Hand()
    {
       return player1;
    }
    
+   /**
+      The getPlayer2Hand method returns the players hand
+      @return an ArrayList with type ImageIcon
+   */
    public ArrayList<ImageIcon> getPlayer2Hand()
    {
       return player2;
    }
    
-   public void DisplayPlayer1Hand()
-   {
-      for (ImageIcon names : player1)
-         System.out.println(names);
-   }
    
-   public void DisplayPlayer2Hand()
-   {
-      for (ImageIcon names : player2)
-         System.out.println(names);
-   }    
-   public static void main(String[] args)
-   {
-      PlayerHands p = new PlayerHands();
-      p.DisplayPlayer1Hand();
-      System.out.println("\n\n\n\n");
-      p.DisplayPlayer2Hand();
-      
-   }
 
 }
