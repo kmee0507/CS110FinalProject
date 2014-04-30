@@ -1,11 +1,18 @@
 import java.util.ArrayList;
 import javax.swing.*;
+/**
+   The CardFile class assigns each players Card to an Image of it
+*/
 public class CardFile 
 {
    final int HANDSIZE = 52;
    private ArrayList<ImageIcon> images = new ArrayList<ImageIcon>();
    private Card c;
    private ImageIcon im;
+   /**
+      The default constructor shuffles the deck and assigns
+      the top card to its corresponding jpg image
+   */
    public CardFile()
    {
       DeckOfCards d = new DeckOfCards();
@@ -284,19 +291,13 @@ public class CardFile
       
      }
      
-     public void DisplayCards()
-     {
-         for(ImageIcon names : images)
-            System.out.println(names);
-     }
+     /**
+      The dealImage method deals the top image from the list
+      @return an ImageIcon
+     */
      public ImageIcon dealImage()
      {
          return images.remove(0);
      }
-      public static void main(String[] args)
-      {
-         CardFile c = new CardFile();
-         c.DisplayCards();
-      }
-   
+        
 }
